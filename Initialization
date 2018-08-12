@@ -1,0 +1,56 @@
+Complex header*****************************
+/*
+ * Complex.h
+ *
+ *  Created on: Jul 16, 2017
+ *      Author: DieBesteDeutsche
+ */
+
+#ifndef COMPLEX_H_
+#define COMPLEX_H_
+
+class Complex {
+private:
+	double real;
+	double imaginary;
+public:
+	Complex(double real, double imaginary);
+};
+
+#endif /* COMPLEX_H_ */
+
+complex.cpp****************************************
+/*
+ * Complex.cpp
+ *
+ *  Created on: Jul 16, 2017
+ *      Author: DieBesteDeutsche
+ */
+
+#include "Complex.h"
+
+Complex::Complex(double real, double imaginary) {
+this->imaginary = imaginary;
+this->real = real;
+
+}
+
+Main**********************************************
+#include <iostream>
+#include <vector>
+#include <map>
+#include"Complex.h"
+using namespace std;
+
+
+
+int main() {
+	Complex c1(1,2);
+
+
+	return 0;
+
+
+}
+
+

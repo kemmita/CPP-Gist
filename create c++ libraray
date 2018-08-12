@@ -1,0 +1,77 @@
+Library header***********************************
+/*
+ * Cat.h
+ *
+ *  Created on: Jul 2, 2017
+ *      Author: DieBesteDeutsche
+ */
+//do not include <iostream> or std, in the header file as when sharing your
+//library not all programmers are going to want use <iostream> or std.
+#ifndef CAT_H_
+#define CAT_H_
+
+//every library needs a namespace so we will call our vikingcoder
+namespace vikingcoder {
+
+void saySomething();
+class Cat {
+public:
+	Cat();
+	void speak();
+	virtual ~Cat();
+};
+
+}
+
+#endif /* CAT_H_ */
+Library Class*****************************************
+/*
+ * Cat.cpp
+ *
+ *  Created on: Jul 2, 2017
+ *      Author: DieBesteDeutsche
+ */
+//it is considered best practice not to include std in your library classes or headers,
+//as you do not know if the next individual will be using it.
+#include "Cat.h"
+#include <iostream>
+namespace vikingcoder{
+
+void saySomething(){
+	std::cout << "south end"<< std::endl;
+}
+
+Cat::Cat() {
+	// TODO Auto-generated constructor stub
+
+}
+
+
+Cat::~Cat() {
+	// TODO Auto-generated destructor stub
+}
+//below is how you write code that is not using namespace std.
+void Cat::speak(){
+	std::cout << "Meouw!!!"<< std::endl;
+
+
+}
+Main method of the program that is calling on our library**************************************************************
+//Remember that this is a seprate C++ program and we are calling on our libraray created some where else
+//by using <Cat.h>
+
+#include <iostream>
+#include <Cat.h>
+
+
+int main(){
+	
+//all of this code below is being called from a different program using a library 
+	vikingcoder::saySomething();
+	vikingcoder::Cat benny;
+	benny.speak();
+
+	return 0;
+}
+
+

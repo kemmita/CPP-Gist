@@ -1,0 +1,25 @@
+/*
+ * and open the template in the editor.
+ */
+
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    float fvalue = 76.4;
+    //notice how we are able to run our floating variable fvalue as fixed or in scientific notation.  
+
+    cout << fixed << fvalue << endl;
+    cout << scientific << fvalue << endl;
+
+
+
+
+
+    return 0;
+
+}
+

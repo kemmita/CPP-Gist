@@ -1,0 +1,33 @@
+
+#include<iostream>
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    int selection = 0;
+    
+    
+    cout <<"Please make your selection"<<endl;
+    cin>> selection;
+
+    switch (selection) {
+        case 1:
+            cout << "heir ist ein" << endl;
+            break;
+        case 2:
+            cout << "heir ist zwei" << endl;
+            break;
+        case 3:
+            cout << "heir ist drei" << endl;
+            break;
+        case 4:
+            cout << "heir ist vier" << endl;
+            break;
+        case 5:
+            cout << "heir ist funf" << endl;
+            break;
+    }
+
+
+    return 0;
+}

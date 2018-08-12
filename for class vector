@@ -1,0 +1,138 @@
+Because there is standard insertion operator defined for vector. But you can provide one.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+#include <iostream>
+#include <vector>
+#include <string>
+using std::string;
+using std::vector;
+using std::ostream;
+using std::cout;
+using std::endl;
+
+template <typename TElem>
+ostream& operator<<(ostream& os, const vector<TElem>& vec) {
+    typedef vector<TElem>::const_iterator iter_t;
+    const iter_t iter_begin = vec.begin();
+    const iter_t iter_end   = vec.end();
+    os << "[";
+    for (iter_t iter = iter_begin; iter != iter_end; ++iter) {
+        cout << ((iter != iter_begin) ? "," : "") << *iter;
+    }
+    os << "]";
+    return os;
+}
+
+int main() {
+    vector<string> text;
+    text.push_back("one");
+    text.push_back("two");
+    text.push_back("three");
+
+    cout << "text = " << text << endl;
+
+    system ("pause");
+    return 0;
+}
+Edit & Run
+
+
+Output:
+text = [one,two,three]
+Press any key to continue . . .
+
+
+Is there any other method?
+
+You could use an ostream_iterator with the copy algorithm?
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+using std::string;
+using std::vector;
+using std::copy;
+using std::cout;
+using std::endl;
+
+int main() {
+    vector<string> text;
+    text.push_back("one");
+    text.push_back("two");
+    text.push_back("three");
+
+    cout << "text = ";
+
+    std::ostream_iterator<string> out_it(std::cout,", ");
+    std::copy(text.begin(), text.end(), out_it);
+    
+    cout << endl;
+
+    system ("pause");
+    return 0;
+}
+Edit & Run
+
+
+Output:
+text = one, two, three,
+Press any key to continue . . .

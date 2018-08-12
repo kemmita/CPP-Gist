@@ -1,0 +1,99 @@
+main************
+//good practice to include all headers Cat und Animal
+#include <string>
+#include<iostream>
+#include "Animal.h"
+#include "Cat.h"
+using namespace std;
+
+
+
+int main() {
+
+    Animal wombat;
+   
+    Cat lion;
+    lion.jump();
+    
+
+
+    return 0;
+}
+Animal Header*******************************************
+//this is the parent class header so I will not be including the Cat header file, as I will not be inheriting from the cat to Animal.
+#include <string>
+#include<iostream>
+#ifndef ANIMAL_H
+#define ANIMAL_H
+using namespace std;
+class Animal {
+public:
+    Animal();
+    Animal(const Animal& orig);
+    virtual ~Animal();
+    void speak();
+private:
+
+};
+
+#endif /* ANIMAL_H */
+Cat Header****************************************
+//notice on line 4 how I include the Animal header file  and on line 8 within this header is where we use the code to extend from Animal to Cat.
+#include <string>
+#include<iostream>
+#include "Animal.h"
+#ifndef CAT_H
+#define CAT_H
+using namespace std;
+class Cat : public Animal{
+public:
+    Cat();
+    Cat(const Cat& orig);
+    virtual ~Cat();
+    void jump();
+private:
+
+};
+
+#endif /* CAT_H */
+Animal Class************************************
+
+#include <string>
+#include<iostream>
+#include "Animal.h"
+
+using namespace std;
+
+Animal::Animal() {
+}
+
+Animal::Animal(const Animal& orig) {
+}
+
+Animal::~Animal() {
+}
+void Animal::speak(){
+    cout<<"Grrrrr..."<<endl;
+}
+Cat class*************************************
+//Notice how I am using the Animal header 
+#include <string>
+#include<iostream>
+#include "Cat.h"
+#include "Animal.h"
+using namespace std;
+
+Cat::Cat() {
+}
+
+Cat::Cat(const Cat& orig) {
+}
+
+Cat::~Cat() {
+}
+void Cat::jump(){
+    cout<<"dis cat be jumpen"<<endl;
+}
+
+
+

@@ -1,0 +1,24 @@
+
+#include<iostream>
+using namespace std;
+
+int main(int argc, char** argv) {
+    //notice how we are able to add the array values by name using + sign. and can list them with <<
+    int dollars[3];
+    dollars[0] = 77;
+    dollars[1] = 177;
+    dollars[2] = 600;
+    cout << dollars[0] + dollars[1] + dollars[2] << endl;
+    cout << dollars[0] << dollars[1] << dollars[2] << endl;
+
+//if we do not want declare them individually on each line we can do it all at once using curly braces and commas. Take a look below.    
+    double numbers[4]{1.52,12.50,166.25,152.23};
+
+//if you want to print out each value of the array individually within a loop, do so like below.    
+    for(int i=0; i<4; i++){
+        cout<<"Value at index"<< i << " : " << numbers[i]<<endl;
+    
+    }
+
+    return 0;
+}

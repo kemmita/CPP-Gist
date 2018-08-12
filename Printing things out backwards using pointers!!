@@ -1,0 +1,26 @@
+
+
+#include <iostream>
+using namespace std;
+
+int main(int argc, char** argv) {
+ //before we had the luxury of using string, we had to use char 
+    char text[] = "Hello";
+  
+   //below is an integer that will start behind the original number 0 of Hello, which would be H, that is why we use sizeof! so basically this is helping us go from 0 to -1.
+    int nChars = sizeof(text)-1;
+  //without these pointers we would not be able to point this new char variable to an existing  char array. 
+    char *pStart = text;
+    
+//this helps us by -1 and starting from the last letter, so originally we were at H. but since we used -1, that equals Hello -1 = 0, if we were not to add or subtract anything, we would start at H.
+    char *pEnd = text + nChars -1;
+    
+
+//above the pointer *pEnd has taken on the responsibility of reversing the flow but only by one, below on line 22 we utilize *pEnd-- to print the whole char array backwards
+    for(int i = 0; i<sizeof(text); i++){
+         cout << *pEnd;
+         *pEnd --;
+    }
+    return 0;
+}
+

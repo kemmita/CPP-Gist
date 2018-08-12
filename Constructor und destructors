@@ -1,0 +1,69 @@
+Main******************************
+
+#include<iostream>
+#include "Cat.h"
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    cout<<"Starting Program..."<<endl;
+    
+    Cat wiskers;
+    wiskers.catNoise();
+      
+    
+    cout<<"Ending Program..."<<endl;
+
+
+    return 0;
+}
+Header File********************************
+
+#include <iostream>
+
+using namespace std;
+
+#ifndef CAT_H
+#define CAT_H
+//Notice how we have to declare our variables here in the header file. in our cpp class file Cat we declare a variable which can then be accessed by the methods that our public
+//and can be used in different classes while at the same time making sure our private variable can only be accessed in its original class
+class Cat {
+private:
+    bool happy;
+public:
+    void catNoise();
+    Cat();
+    ~Cat();
+//as you can see above, destructors are created using that weird symbol.
+};
+
+#endif /* CAT_H */
+
+Cat class*****************************
+#include "Cat.h"
+#include <iostream>
+
+using namespace std;
+
+//Below is a constructor, even this has to be declared in the header file, but instead of setting variables to specific values inside the header,
+//we do it here in the constructor. so variable happy was created in the header file but was not initialized until the constructor .
+//so everything is created in the header file and the variables are initialized within the constructors.
+Cat::Cat(){
+    cout <<"Cat created."<<endl;
+    
+    happy = true;
+}
+
+Cat::~Cat(){
+    cout <<"Cat Destroyed."<<endl;
+
+}
+
+void Cat::catNoise() {
+  
+    if(happy){
+    cout << "Meow" << endl;
+    }else{
+        cout<<"sssss"<<endl;
+    }
+}

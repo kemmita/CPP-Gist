@@ -1,0 +1,38 @@
+#include <iostream>
+//remember that exception is a c++ library that needs to be included manually here with our set up
+#include <exception>
+#include <string>
+
+//we have no real errors to deal with so we will create two booleans and set them to true and false
+void goesWrong(){
+	bool error1 = true;
+	bool error2 = false;
+//error1 above is true so it is going to throw the exception, the name of the exception is bad_alloc();, but notice how we need
+//to display it as std::bad_alloc(); that is because we are not using std.
+	if(error1){
+		throw std::bad_alloc();
+	}
+	if(error2){
+		throw std::exception();
+	}
+}
+
+
+int main(){
+//put the method you think may have errors in the try brackets
+	try{
+		goesWrong();
+	}
+//if something does go wrong above, it will be caught below. notice inside we have the error we are catching, but also adding &e
+//this is just a reference so we can call on a method like the "what method." catch(std::bad_alloc is placed before catch(std::exception
+//that is because bad alloc is a sub class of exception and will not be reached if the parent class exception is first in line.
+	catch(std::bad_alloc &e){
+			std::cout<<e.what()<<std::endl;
+		}
+	catch(std::exception &e){
+		std::cout <<e.what()<<std::endl;
+	}
+
+
+	return 0;
+}

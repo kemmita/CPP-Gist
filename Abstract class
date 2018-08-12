@@ -1,0 +1,42 @@
+#include "stdafx.h"
+#include<iostream>
+#include <string>
+using namespace std;
+
+//class Vehicle is an Abstract class, I like to think of it as an refrence manual that shows what all of the other classes must implement.
+//all vehicles start engine so I created a virtual method virtual void startEngine()=0;
+class Vehicle {
+public:
+	virtual void startEngine()=0;
+
+
+};
+//class Car uses polymorphisim with the virtual class Vehicle to override the function to make it display something different then the base class vehicle.
+class Car: public Vehicle {
+public:
+	virtual void startEngine() {
+		cout << "quiet vroom vroom!" << endl;
+	}
+
+};
+class Truck: public Vehicle {
+public:
+	virtual void startEngine() {
+		cout << "Loud VROOM VROOM!!!" << endl;
+	}
+};
+
+
+
+int main(){
+	
+	Car v;
+	v.startEngine();
+
+
+
+
+	
+    return 0;
+}
+

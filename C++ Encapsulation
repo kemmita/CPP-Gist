@@ -1,0 +1,41 @@
+//C++ Encapsulation 
+#include <string>
+#include<iostream>
+
+using namespace std;
+//Below underneath private is the image of encapsulation. it is being able to keep some of your chosen variable and methods private from other functions or classes it is best practice to keep as many
+//things private as possible. we are declaring a private variable and method allowing nobody else in a different method or class to see it. so how do we use it if it is restricted to this class Frog. The answer, in the 
+//public area of class Frog create a constructor that initiates the private name variable and then a method that will have access to the private methods and variables like on line 26. See this is public and 
+//can be called from any class or method. So you will be able to assign a value to name but not 100% like, string name = James. our private variable protects us from such things. our private method
+//getName is private but is accessed in the public method info. if you look close below, info is obtaining access to all private things. and the only thing used in main is info, protecting all of our private things
+
+class Frog {
+private:
+    string name;
+private:
+    string getName() {
+
+        return name;
+    }
+public:
+
+    Frog(string name) {
+        this ->name = name;
+
+    }
+
+    void info() {
+        cout<<"my name is "<< getName()<<endl;
+
+    }
+};
+
+int main() {
+
+    Frog frog("Mike");
+    frog.info();
+
+
+
+    return 0;
+}

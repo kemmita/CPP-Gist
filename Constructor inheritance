@@ -1,0 +1,50 @@
+//C++ Constructor inheritance 
+#include <string>
+#include<iostream>
+
+using namespace std;
+
+class machine {
+private:
+    int ID;
+public:
+    machine(int ID){
+        cout << "Machine no argument constructor called" << endl;
+        this->ID = ID;
+    }
+    void info() {
+        cout << "your ID is: " << ID << endl;
+    }
+};
+
+//if you take a look below at our constructor, you will see that we have called on the machine constructor along with it's private ID variable. this is how 
+//we gain access to other classes constructors.
+class vehicle : public machine {
+public:
+    vehicle(int ID) : machine(ID) {
+        cout << "vehicle id is: " << ID << endl;
+    }
+};
+//notice how we call on the vehicle constructor here instead of the machine, class vehicle has already obtained the rights for the private int ID
+//thus making us call on vehicle constructor and not the original machine. we could call on machine but we would have to inherit directly from machine and skip vehicle.
+class car: public vehicle{
+public:
+    car(int ID) : vehicle(ID){
+        cout<<"the class car id is: "<< ID<<endl;
+    }
+
+};
+
+
+
+int main() {
+//notice below how we are giving 152 to the vehicle class, but since we are actually utilizing the original class machine, when we call on a method from 
+//machine we get the same integer this was all made possible by the constructor call on line 24.
+    vehicle mach(152);
+    mach.info();
+
+//we are calling on vehicle constructor that has already called the machine constructor for the private ID. basically did the same thing as above, but gave it and additional super class. 
+    car das(183);
+
+    return 0;
+}

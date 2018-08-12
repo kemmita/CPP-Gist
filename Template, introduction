@@ -1,0 +1,41 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+//below is how we declare a class template the name of the class is still Test but the name of the template is T
+//and not until we get to main will we know what type of data it will hold, it could be string. int, long long, anything!
+template<class T, class K>
+class Test{
+//below we are naming our template obj
+private:
+	T obj;
+	K Obj;
+
+public:
+//our public constructor is going to allow us to initialize our template, notice how we need to supply both T and obj? Why?
+	Test(T obj, K Obj){
+		this->obj = obj;
+		this->Obj = Obj;
+	}
+//function below prints our template that is now named obj
+	void print(){
+		cout << obj<<" "<<Obj<<endl;
+	}
+
+};
+int main() {
+//using a template is a bit like a vector. first use the name of the class then with in the two bracket define the template data type
+// after that give the template a name, we named ours test1 and used the constructor to pass a value. the value is hello because we assigned
+//our template to string. and then we call on our method to print the value.
+	Test<string,int> test1("Kevin", 28);
+
+	test1.print();
+
+
+
+
+
+			return 0;
+
+
+}

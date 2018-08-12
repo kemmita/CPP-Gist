@@ -1,0 +1,38 @@
+#include <cstdlib>
+#include <iostream> 
+#include <vector>
+#include <string>
+using namespace std;
+
+int main() {
+    std::vector<int> id;
+    std::vector<string> name;
+    std::vector<int> age;
+
+    for (int i = 0; i < 3; i++) {
+        int input;
+        cout << "Please enter contact ID" << endl;
+        cin >> input;
+        id.push_back(input);
+        string input2;
+        cout << "Please enter contact Name" << endl;
+        cin >> input2;
+        name.push_back(input2);
+        int input3;
+        cout << "Please enter contact Age" << endl;
+        cin >> input3;
+        age.push_back(input3);
+    }
+
+
+    for (int i = 0; i < 3; i++) {
+        int userId = id[i];
+        string userName = name[i];
+        int userAge = age[i];
+
+        std::cout << "\tID: " << userId << "\tName: " << userName << "\tAge: " << userAge << std::endl;
+    }
+
+
+    return 0;
+}

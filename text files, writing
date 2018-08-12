@@ -1,0 +1,27 @@
+#include <iostream>
+//fstream is a pre-built c++ library allowing us to create files like txt.
+#include <fstream>
+using namespace std;
+
+int main(){
+//ofstream is a method provided by fstream we assing it a new name just like any other method.
+	ofstream outFile;
+//we then create a string that is = "text.txt"
+	string outputFileName = "text.txt";
+//below is the command to open the text file
+	outFile.open(outputFileName);
+//below lets you make sure the file is open, if it is, use the method name we gave ofstream, which is outfile
+//anything we write after the ofstream method will be written to the text file. line 19 shows us using the
+//.close method. ofstream will always need to be opened and closed as you can see from the code below.
+	if(outFile.is_open()){
+		outFile <<"hello there 2" <<endl;
+		outFile << 1234<<endl;
+		outFile.close();
+
+	}
+	else{
+		cout<<"Could not create file"<<outputFileName<<endl;
+	}
+
+	return 0;
+}

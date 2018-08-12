@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+//below we have created a function, with a function pointer. and then inside the body type your function pointer as if your calling a method.
+void test(void(*pFunc)()){
+	pFunc();
+}
+
+
+
+int main() {
+//below is how you declare a lambda expression.
+	auto func = [](){cout<<"Hello"<<endl;};
+//below we are only calling the code from line 13 and nothing else
+	func();
+
+//below is our function we created above and with our function pointer, we are able to call on our lambda expression.
+	test(func);
+
+
+
+	return 0;
+
+
+}
+SECOND EXAMPLE*******************************************
+#include "stdafx.h"
+#include<iostream>
+#include <string>
+using namespace std;
+
+void testGreat(void(*great) (string)){
+	great("bob");
+}
+
+
+
+int main(){
+	auto pGreat = [](string name) {
+		cout << "Hello Mr. " << name << endl; 
+	};
+
+	pGreat("Johnson");
+	
+
+	testGreat(pGreat);
+
+	auto pDivide = [](double a, double b) {
+		cout << a / b << endl;
+		return a / b;
+	};
+	pDivide(10, 2);
+
+	system("pause");
+	
+    return 0;
+}

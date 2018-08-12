@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <map>
+
+using namespace std;
+
+
+
+int main() {
+	map<string, vector<int> > scores;
+	scores["James"].push_back(73);
+	scores["Kennith"].push_back(71);
+	scores["Backun"].push_back(93);
+	scores["Spisnos"].push_back(81);
+
+for(map<string, vector<int>>::iterator it = scores.begin(); it != scores.end(); it++){
+	string name = it->first;
+	vector<int> grades = it->second;
+	cout << name << ": "<<flush;
+
+	for(int i=0; i<grades.size(); i++){
+		cout<< grades[i] <<" "<<flush;
+	}
+}
+
+	return 0;
+
+
+}

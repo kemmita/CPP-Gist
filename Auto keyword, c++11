@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+    string Texts [] = {"one", "Two", "Three"};
+    int Numbers [] = {1, 2, 3, 4, 5};
+
+    //utilizing the key word "auto" allows us to to get rid of the data types and even the array brackets after the given name such as texts or numbers.
+    //the code below does the same thing as the code above.
+    auto texts = {"one", "Two", "Three"};
+    auto numbers  = {1, 2, 3, 4, 5};
+
+
+    return 0;
+}

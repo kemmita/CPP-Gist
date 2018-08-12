@@ -1,0 +1,43 @@
+#include<iostream>
+#include <string>
+using namespace std;
+class MusicalInstrumant {
+public:
+	virtual void play() {
+		cout << "playing instrument" << endl;
+	}
+	virtual void reset() {
+		cout << "reseting instrument" << endl;
+	}
+	virtual ~MusicalInstrumant() {};
+};
+class machine {
+public:
+	virtual void start() {
+		cout << "starting machine" << endl;
+	}
+	virtual void reset() {
+		cout << "reseting machine" << endl;
+	}
+	virtual ~machine() {};
+
+};
+//below is multiple inheritence, make sure when you are creating a class that has multiple inheritence, to add a virtual destructor.
+class Synthesizer : public machine, public MusicalInstrumant {
+public:
+	virtual ~Synthesizer() {};
+};
+
+int main(){
+
+//below we call on our multiple inheritence class "Synthesizer" and give it the name of synth. above out of the three classes the play method 
+//is only found in one clas so we call it like normal, but since two classes have the same name "reset", call on the method prefixed with the class name
+	Synthesizer synth;
+	synth.play();
+	synth.machine::reset();
+	
+
+	
+    return 0;
+}
+

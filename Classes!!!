@@ -1,0 +1,51 @@
+********** Main Class
+
+#include<iostream>
+#include "Cat.h"
+using namespace std;
+
+int main(int argc, char** argv) {
+    Cat betsy;
+    betsy.catNoise();
+    betsy.Userpassword();
+  
+  return 0;
+}
+Header File************************
+
+#include <iostream>
+
+using namespace std;
+
+#ifndef CAT_H
+#define CAT_H
+class Cat{
+public:
+void catNoise();
+void Userpassword();
+};
+
+#endif /* CAT_H */
+
+*******************************************Cat class
+#include "Cat.h"
+#include <iostream>
+
+using namespace std;
+
+void Cat::catNoise() {
+    cout << "Poop" << endl;
+}
+
+void Cat::Userpassword() {
+    cout << "Please enter your password > " << flush;
+    string password = "viper";
+    string input;
+    cin>> input;
+
+    while (input != password) {
+        cout << "Password Incorrect, Please Try Again > " << flush;
+        cin>> input;
+    }
+    cout << "Password Accepted!" << endl;
+}

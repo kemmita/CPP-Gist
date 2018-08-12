@@ -1,0 +1,31 @@
+
+
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+//we can think of maps kind of like a linked list or and arrasy list, but we are able to assign to diferent value types at once
+//and they can be different data types we made our map first string and then int. below names will be our map name.
+	map<string, int> names;
+//this is how you assign both values to the map.
+	names["Russell"] =27;
+	names["James"] =28;
+	names["Kevin"] =23;
+//below we our seeing out Russell but only the age wall actually be outputted, as far as I am aware thus far, the only way to print both string
+//and int of our map is with an assigned iterator  like tho one below in our for loop.
+	cout<<names["Russell"]<<endl;
+
+//below our for loop has created an iterator called it and with the cout statement, it is using the access keywords first and second
+//this is how the iterator is able to access both of the assigned data inside of the map.
+	for(map<string, int>::iterator it= names.begin(); it != names.end(); it++){
+		cout<<"Contacts:"<< it->first<<": "<< it->second<<endl;
+
+	}
+
+
+			return 0;
+
+
+}

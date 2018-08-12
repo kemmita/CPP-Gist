@@ -1,0 +1,62 @@
+Main clas***************************************
+
+#include<iostream>
+#include "Cat.h"
+using namespace std;
+
+int main(int argc, char** argv) {
+    Cat betsy;
+
+    betsy.makeHappy();
+    betsy.catNoise(); 
+
+    Cat mike;
+    mike.makeSad();
+    mike.catNoise();
+
+
+    return 0;
+}
+Header File***************************************************
+
+#include <iostream>
+
+using namespace std;
+
+#ifndef CAT_H
+#define CAT_H
+//Notice how we have to declare our variables here in the header file. in our cpp class file Cat we declare a variable which can then be accessed by the methods that our public
+//and can be used in different classes while at the same time making sure our private variable can only be accessed in its original class
+class Cat {
+private:
+    bool happy;
+public:
+    void makeHappy();
+    void makeSad();
+    void catNoise();
+
+};
+
+#endif /* CAT_H */
+
+Cat class***********************************************************************
+#include "Cat.h"
+#include <iostream>
+
+using namespace std;
+
+void Cat::catNoise() {
+//the variable happy has been declared in the file along with the methods     
+    if(happy){
+    cout << "Meow" << endl;
+    }else{
+        cout<<"sssss"<<endl;
+    }
+}
+//by using these public methods, we can utilize the private variable "happy" within other classes.
+void Cat::makeHappy(){
+    happy = true;
+}
+void Cat::makeSad(){
+    happy = false;
+}

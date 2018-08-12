@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   utils.h
+ * Author: DieBesteDeutsche
+ *
+ * Created on June 6, 2017, 4:59 PM
+ */
+
+#ifndef UTILS_H
+#define UTILS_H
+
+void spitFir(); 
+
+#endif /* UTILS_H */
+By adding a header file, we can call a method without delcaring a prototype or writing method above main. file is above and 
+main is below. 
+
+#include<iostream>
+#include "utils.h"
+using namespace std;
+
+
+int main(int argc, char** argv) {
+    
+    spitFir();
+
+
+    return 0;
+}
+
+void spitFir(){
+    cout<<"I am so tough"<<endl;
+    cout<<"all the women thin I be buff"<<endl;
+
+}
+

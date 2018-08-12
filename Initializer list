@@ -1,0 +1,31 @@
+#include<iostream>
+#include <string>
+#include<initializer_list>
+using namespace std;
+
+class Test {
+public:
+//below in our constructor, we are creating our first initializer list. and then a for each loop to iterate through the list. 
+	Test(initializer_list<string> texts) {
+		for (auto i : texts) {
+			cout << i << endl;
+		}
+	}
+	
+
+};
+
+
+
+
+int main(){
+	
+	
+//we are calling our constructor method from our test class. in the constructor above we created an initializer list that we can 
+//fill manualy by doing what you see below.
+	Test test{ "Ich", "Liebe", "Dich" };
+
+
+    return 0;
+}
+

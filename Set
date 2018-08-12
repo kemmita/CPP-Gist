@@ -1,0 +1,31 @@
+//set is just like a map but in my opinion less robust, stick with the maps.
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+
+int main(int argc, char** argv) {
+//set is just like a list or an array
+	set<int>age;
+	age.insert(2);
+	age.insert(12);
+	age.insert(18);
+	age.insert(13);
+
+//iterating through the set
+	for(set<int>::iterator it = age.begin(); it != age.end(); it++){
+		cout<<*it<<endl;
+	}
+//searching for a specific piece of data in the set.
+	set<int>::iterator finden = age.find(18);
+	if(finden != age.end()){
+		cout<<"We have located number:"<<*finden<<endl;
+	}
+
+
+			return 0;
+
+
+}
+

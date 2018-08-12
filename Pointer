@@ -1,0 +1,19 @@
+int main(){
+//this is a poniter and works just like using the keyword new, Synthesizer is just a normal class above. 
+	Synthesizer *pSynth = new Synthesizer();
+	
+	pSynth->play();
+	pSynth->machine::reset();
+
+delete pSynth;
+
+//this is my prefered way, but it is important to know about pointers when dealing with c++.
+	Synthesizer synth;
+	synth.play();
+	synth.machine::reset();
+	
+	system("pause");
+	
+    return 0;
+}
+//be

@@ -1,0 +1,34 @@
+
+#include <string>
+#include<iostream>
+
+using namespace std;
+
+class test {
+    //notice how we are declaring the variable static so it can be used throughout the whole program.
+private:
+    static int count;
+public:
+    //by making this variable const, we do not need to initialize it  like we did count below.
+    static int const MAX = 99;
+    static void showInfo() {
+        cout << count << endl;
+
+    }
+};
+//in order to initialize the static variable above, we create another variable with the same datatype , name it, provide two :: and then provide
+//the static variable name along with it's value, so I just randomly chose 7
+int test::count = 7;
+
+int main() {
+    //typically we would do like below to call on a method from a separate class
+    test mike;
+    mike.showInfo();
+    //below is a different way we can call on methods from different classes into main, but they must be static.
+    test::showInfo();
+
+    cout << test::MAX << endl;
+    return 0;
+}
+
+

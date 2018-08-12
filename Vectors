@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+int main(){
+//c++ vectors are a bit like java array list or linked list
+	vector<string> strings;
+
+	strings.push_back("Russell");
+	strings.push_back("Joy");
+	strings.push_back("Jane");
+	strings.push_back("Michele");
+	strings.push_back("Joey");
+	strings.push_back("Andrew");
+	strings.push_back("Milton");
+//while we could utilize a for loop here to iterate through the loop, it is best practice to use the vector loop instead
+// we are using the type and then assigning it an iterator that I have named it, I then set it to strings.begin so the loop
+//would begin at the beginning. then we state in the loop while strings does not reach strings.end the iterator it will continue
+
+	for(vector<string>::iterator it = strings.begin(); it != strings.end(); it++){
+	cout<< *it <<endl;
+
+	}
+
+
+
+	return 0;
+}
+

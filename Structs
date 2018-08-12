@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//structs are mainly used for writting to binary files. structs need to be surrounded by #pragma pack(push, 1) and #pragma pack(pop),
+//in order for the bites to be transfered correctly. if we did not use #pragma the bites typically transfer by two so if we want an exact
+//bite number write (push, 1) this will allow it to transfer one bite at a time making the ending number exact.
+#pragma pack(push, 1)
+struct Person{
+	char name[50];
+	int age;
+	double weight;
+};
+#pragma pack(pop)
+int main(){
+	cout<< sizeof(Person)<<endl;
+
+
+	return 0;
+}

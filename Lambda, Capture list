@@ -1,0 +1,28 @@
+#include<iostream>
+#include <string>
+using namespace std;
+
+
+
+
+int main(){
+	//below is 2 different ways to initialize a variable.
+	int one = 1;
+	int two{ 2 };
+	int three = 3;
+
+//in order for us to use a variable in a lambda expression, we must first capoture it, in the capture list "[]".
+	auto Nummer = [one]{
+		cout << one << endl;
+	};
+	Nummer();
+
+//below we are able to caputre all the local variables in the in the capture list by using the "=" symbol.
+	auto ZweiteNummer = [=] {
+		cout << two << endl;
+	};
+	ZweiteNummer();
+	system("pause");
+	
+    return 0;
+}

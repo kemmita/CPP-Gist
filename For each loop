@@ -1,0 +1,27 @@
+#include <iostream>
+#include<vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    vector<int> age;
+    
+    for(int i =0; i<3; i++){
+        int tAge;
+        cout<<"Enter patient age: "<<endl;
+        cin >> tAge;
+        age.push_back(tAge);
+    }
+   
+//again we are using the auto key word to declare i which is then going to take on the same data type as our vector age. And this is a for each loop a newer, faster way of iterating through a loop
+//for each time i does not equal the elements stored in age, print data stored in age. but remember to cout i and not age.
+    for(auto i: age){
+        cout <<i<<" ";
+    }
+
+    
+
+
+    return 0;
+}

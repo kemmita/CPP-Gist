@@ -1,0 +1,33 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+
+int main(){
+//this is very much like a link list from java, remember to include a list in your program, you must first include <list> above.
+//then give your list a data type and name, I gave my list the name numbers.
+	list<int> numbers;
+// now in order to insert or add data to your list you must first create an iterator for the list and initialize it with the code below.
+	list<int>::iterator it = numbers.begin();
+//in order to insert data include the iterators nick name and the data you wish to insert. you can then do some neat stuff like push
+//numbers to the back or to the front.
+	numbers.insert(it, 100);
+	numbers.push_back(3);
+	numbers.push_front(5);
+
+
+
+
+
+
+
+
+//the for loop is much like the vector for loop, with this we can iterate and display all of our data stored within the list.
+	for(list<int>::iterator it = numbers.begin(); it != numbers.end(); it++ ){
+		cout<< *it <<endl;
+	}
+
+
+
+	return 0;
+}

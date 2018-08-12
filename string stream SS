@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include<sstream>
+using namespace std;
+
+int main(int argc, char** argv) {
+    
+    int age = 32;
+    string name = "Bob";
+    
+    stringstream ss; 
+    ss <<"Your name is: " ;
+    ss << name;
+    ss<<"; and your age is: ";
+    ss << age;
+ //unlike Java, C++ has a hard time with printing different data types within the same string  and that is why we use string stream
+ //do not forget to include the package up top!
+    cout<< ss.str()<<endl;
+
+ 
+
+    return 0;
+}

@@ -1,0 +1,63 @@
+Header file******************************
+
+
+#ifndef GETUNDSET_H
+#define GETUNDSET_H
+#include<iostream>
+using namespace std;
+
+class GetUndSet {
+private:
+    string name;
+
+public:
+    GetUndSet();
+   string getName();
+   void setName(string newName);
+  
+
+
+
+};
+
+#endif /* GETUNDSET_H */
+
+GetUndSet class**************************
+
+#include "GetUndSet.h"
+using namespace std;
+//data type for name has already been declared in the header file so if we do not wish to define it here, we do not have to.
+
+//constructor below initializes variable
+GetUndSet::GetUndSet() {
+    name = "Fred";
+}
+//method below sets the name, so whatever we enter in the main method within this methods parameters will end up being the setName
+void GetUndSet::setName(string newName){
+    name = newName;
+    
+}
+//after the method above sets the name, the method below grabs it. and by making this method string in the header and here, we can use that to print the set name in the main method.
+
+string GetUndSet::getName(){
+    return name;
+}
+
+
+main class*******************************
+
+#include<iostream>
+#include "GetUndSet.h"
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    GetUndSet person;
+    person.setName("Russell");
+    person.getName();
+    cout << "My name is " << person.getName() << endl;
+
+
+
+    return 0;
+}

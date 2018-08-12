@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+//normally when creating a method or class or function or vector we needed to declare the data type with templates that has changed
+//with our method void print we are accepting a value that will be entered in the main function typically we would do void print(int n)
+//but if we replace that with the template T, we can accept any data type, so instead of void print(int n) do void print(T n).
+template<class T>
+void print(T n){
+	cout<< n<<endl;
+}
+
+
+int main() {
+//below we could pass any data type, because we are using a template above within the parameter brackets. This is a bit
+//like Python where n can take on the value of any data type. below we have assigned a int and string and both will be printed
+	print(45);
+	print("Love!");
+
+
+//below is another way of using a template method, but I prefer the faster way above.
+print<int>(8);
+print<string>("hey");
+
+
+
+
+			return 0;
+
+
+}

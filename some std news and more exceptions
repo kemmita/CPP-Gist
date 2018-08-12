@@ -1,0 +1,32 @@
+#include <iostream>
+//including c++ exception allows us to utilize pre-written code, because we are not using namespace std, we must include string
+#include <exception>
+#include <string>
+
+//we are not using namespace std, so inheriting from a different class is prefixed with std::
+class Myexceptions : public std::exception {
+public:
+	virtual const char* what() {
+		return "Etwas ist mit den schlect!";
+
+	}
+
+};
+class Test{
+public:
+	void goesWrong(){
+		throw Myexceptions();
+	}
+};
+
+int main(){
+	Test test;
+	try{
+		test.goesWrong();
+	}
+	catch(Myexceptions &e){
+		std::cout<<e.what()<<std::endl;
+	}
+	return 0;
+}
+

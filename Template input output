@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+//normally when creating a method or class or function or vector we needed to declare the data type with templates that has changed
+//with our method void print we are accepting a value that will be entered in the main function typically we would do void print(int n)
+//but if we replace that with the template T, we can accept any data type, so instead of void print(int n) do void print(T n).
+template<class T>
+void print(T n){
+	cout<< n<<endl;
+}
+
+
+
+int main() {
+
+//below is a way we could enter anything, it will not store the actual data type, but it will work.
+	cout<<"enter anything! "<<endl;
+	int d;
+	cin>>d;
+	print(d);
+
+
+
+
+
+
+			return 0;
+
+
+}

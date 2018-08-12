@@ -1,0 +1,46 @@
+
+
+#include <iostream>
+#include <map>
+using namespace std;
+//create a class for our map.
+class Person{
+//here we can assign as many variables as we want to be stored in our map.
+private:
+	string name;
+	int age;
+	int ID;
+//below our 2 constructors, for some reason there needs to be one that is empty
+public:
+	Person(): name(""), age(0), ID(0){
+
+	}
+	Person(string name, int age, int ID):
+		name(name), age(age), ID(ID){
+
+	}
+//this method will print our variables assigned to our map
+	void print() const{
+		cout<< name<<": "<<age<<" ID: "<<ID<< endl;
+	}
+
+};
+int main(int argc, char** argv) {
+//here we create our map with our class person
+	map<int, Person> people;
+//to fulfill the map, we assign a numeric value for the int then set it = to Person class in the map and add data to the variables above.
+	people[0]= Person("Rusty", 27, 1);
+	people[1]= Person("Joey", 25, 2);
+	people[2]= Person("Andrew",29, 3);
+//this for loop prints our map, notice how we skip first and got to second, that is because first part of the map int was just a place
+//holder, the second part was our class that we filled with data and instead of doing a cout here we set second to our method "print" above
+//that will print out all data that was stored inside of the map excluding it->first.
+	for(map<int, Person>::iterator it = people.begin(); it != people.end();it++){
+		it->second.print();
+	}
+
+
+			return 0;
+
+
+}

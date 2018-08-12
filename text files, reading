@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+// this variable string is taking on the ownership of our real file name, test.tx
+	string inFileName = "text.txt";
+//ifstream is a method of fstream and allows us to open files and we are just assigning a name here to use it.
+	ifstream inFile;
+
+//we are now utilizing that method to open our txt
+	inFile.open(inFileName);
+
+	if(inFile.is_open()){
+//the variable "string line" below allows us to print one line at a time in our file so if we need to print 4 lines, we will need to create a loop, in
+//the while loop you will see inFile and while there is still text to be read from inFilethe end of the file, we will use another method
+//from fstream, getline, getline will grab every line from the infile method we created and print it using our string variable line.
+		string line;
+		while(inFile){
+			getline(inFile, line);
+			cout<<line<<endl;
+		}
+		inFile.close();
+	}
+	else{
+		cout<<"Etwas ist mit den los!"<<endl;
+	}
+	return 0;
+}

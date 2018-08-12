@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Test{
+private:
+    int one {85};
+    int two {66};
+public:
+    void run(){
+        int three{3};
+        int four{52};
+ // in order for us to use instance variables like one and two above, we must use the keyword "this" in our capture list. 
+ //although I was able to make it work by just doing "[=]" in the capture list    
+        auto pLam = [this, three ,four](){
+            one = 27;
+            cout<<one<<endl;
+            cout<<four<<endl;
+        };
+        pLam();
+    }
+};
+
+int main() {
+    Test test;
+    test.run();
+
+
+    return 0;
+}

@@ -1,0 +1,16 @@
+
+#include<iostream>
+using namespace std;
+
+int main(int argc, char** argv) {
+//if we wanted to stop our for loop from executing fully, we can add a if statement like below. 
+    for(int x = 0; x <10; x++){
+        cout<<"x is"<< x<<endl;
+        if(x == 3){
+            break;
+        }
+    }
+
+    return 0;
+}
+

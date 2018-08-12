@@ -1,0 +1,39 @@
+#include<iostream>
+
+
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    cout << "1. Add new record" << endl;
+    cout << "2. Delete record" << endl;
+    cout << "3. View record" << endl;
+    cout << "4. Search records" << endl;
+    cout << "5. Quit" << endl;
+    
+    cout << "Enter your selection: " << endl;
+    int selection;
+    cin >> selection;
+    
+    if (selection == 1){
+    cout << " Adding record..." << endl;
+    }
+    else if (selection == 2){
+        cout << " Deleting record..." << endl;
+    }
+     else if (selection == 3){
+        cout << " Retrieving record..." << endl;
+    }
+    else if (selection == 4){
+        cout << " Searching record..." << endl;
+    }
+    else{
+        cout << " Shutting down..." << endl;
+    
+    }
+    
+
+    return 0;
+
+}
+

@@ -1,0 +1,107 @@
+
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
+string pageName[3];
+string inventoryCat[3];
+string items [3];
+bool found = false;
+
+
+void password();
+void newInventoryPage();
+void viewItems();
+void searchCategories();
+
+int main(int argc, char** argv) {
+    int selection = 0;
+    cout << "Hello and welcome to easy go inventory!" << endl;
+    password();
+    do {
+        cout << "*******************************************" << endl;
+        cout << "             Main Menu         " << endl;
+        cout << "1.) Create new inventory page and category." << endl;
+        cout << "2.) View all stored data." << endl;
+        cout << "3.) Review specific inventory page." << endl;
+        cout << "4.)            Quit.              " << endl;
+        cout << "********************************************" << endl;
+
+        cin>> selection;
+        switch (selection) {
+            case 1:
+                newInventoryPage();
+                break;
+            case 2:
+                viewItems();
+                break;
+            case 3:
+                searchCategories();
+                break;
+            case 4:
+                cout << "Quiting..." << endl;
+                break;
+
+        }
+
+
+    } while (selection != 4);
+
+
+    return 0;
+}
+
+void password() {
+    string password = "viper";
+    string passwordtry;
+    cout << "Please enter the password that was provided with your purchase: " << endl;
+    cin>> passwordtry;
+    while (passwordtry != password) {
+        cout << "Please try password again: " << endl;
+        cin>> passwordtry;
+    }
+    cout << "Password verified!" << endl;
+}
+
+void newInventoryPage() {
+
+
+    for (int i = 0; i < 3; i++) {
+        cout << "Please enter name of new category: " << endl;
+        cin >> inventoryCat[i];
+        cout << "What will be the title of the new inventory page? " << endl;
+        cin >> pageName[i];
+        cout << "Please enter Item" << endl;
+        cin >> items[i];
+    }
+    cout << "New inventory pages created. " << endl;
+
+
+}
+
+void viewItems() {
+    cout << "Categories: Page Name: Item:" << endl;
+    for (int i = 0; i < 3; i++) {
+
+
+        cout << inventoryCat[i] << ":   " << pageName[i] << ":   " << items[i] << endl;
+
+    }
+
+}
+
+void searchCategories() {
+    string input;
+    cout << "Please enter a category name to view its details: " << endl;
+    cin>>input;
+    for (int i = 0; i < 3; i++) {
+        if (input == inventoryCat[i]) {
+            found = true;
+            cout<< "Page Name" << ":" <<"Page Items"<<":"<<endl;
+            cout << pageName[i] << "    :::   " << items[i] << endl;
+
+
+        }
+
+    }
+}

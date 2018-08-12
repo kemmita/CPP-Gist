@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+//new variable fileName is taking on the value of our text file, ifstream Input allows us to read txt files
+	string fileName = "stats.txt";
+	ifstream Input;
+
+	Input.open(fileName);
+
+	if(!Input.is_open()){
+		return 1;
+	}
+
+//again this means while Input txt file is not done, continue reading file.
+	while(Input){
+		string line;
+//notice how we have a : in between single quotations, this when done within the fstream method getline actually removes that specific
+//selected symbol from the txt file so now no colons will be read from the file
+		getline(Input, line, ':');
+//in order to get the integer values of the population, me must first create a int variable that I gave the original name
+		int Population;
+//below is the extract from operator, so below we are grabbing the number values from our text file
+		Input>> Population;
+//>> ws is a c++11 method that removes all white space from the read txt file.
+		Input >> ws;
+//below helps us from repeated txt being displayed, but is not the same thing as .close, we must always use that at the end.
+		if(!Input){
+			break;
+		}
+//as I mentioned above c++ cannot read in colons, so we had to remove it above and reinsert it ourselves below in the print statement
+		cout << line << ": "<<Population<<endl;
+
+	}
+	Input.close();
+
+
+	return 0;
+}

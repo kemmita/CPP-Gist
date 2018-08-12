@@ -1,0 +1,22 @@
+
+#include<iostream>
+using namespace std;
+
+int main(int argc, char** argv) {
+//the first array[2] is for the amount of rows that will be in the array and the second array box [3] is how many elements will be in each row
+    string animals[2][3] = {
+        {"lion", "Tiger", "Bear"},
+        {"Dog", "Cat", "Wolf"}
+    };
+//you can tell which for loop is for what part of the array by looking at the for loop, the first for loop represents two just like above and the
+//the second represents three just like above. The for loop is in the same scope as our array and that is why we can use the for loop and it works.
+    for (int i = 0; i < 2; i++) {
+        for (int x = 0; x < 3; x++) {
+            cout << animals[i][x]<<" "<<flush;
+        }
+//without the empty cout below, the two dimensional row would be only one line and not two lines.
+        cout<<endl;
+    }
+
+    return 0;
+}

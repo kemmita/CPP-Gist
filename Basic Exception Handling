@@ -1,0 +1,37 @@
+
+#include <iostream>
+#include <string>
+
+//below we declare a function with boolean variables one false and one true since the first one is set to false
+// it is passed by and moved onto the second one the error is true which means in real life it has occurred so when the error happens
+//a message is thrown
+void mightGoWorng(){
+	bool error = false;
+	bool errorZwei = true;
+
+	if(error){
+		throw "something went wrong.";
+	}
+	if(errorZwei){
+		throw std::string();
+	}
+}
+
+int main(){
+//here we utilize one try block surrounding our function called from above. we then place as many catch blocks as we want inside
+	try{
+	mightGoWorng();
+	}
+	catch(char const *e){
+		std::cout <<"Error Message: " << e<<std::endl;
+
+	}
+//here is the program catching the throw from above, which in turn displays a message.
+	catch(std::string){
+		std::cout <<"Error two has occurred, Begin evacuation process "<<std::endl;
+
+	}
+	std::cout<<"Still running..."<<std::endl;
+
+	return 0;
+}

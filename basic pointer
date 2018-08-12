@@ -1,0 +1,22 @@
+
+
+#include <iostream>
+using namespace std;
+
+
+int main(int argc, char** argv) {
+    
+    int value = 8;
+ 
+//below is how you declare a pointer 
+    int* pValue = &value;
+//below will print the location of the pointer   
+    cout<< pValue<<endl;
+    cout<< *pValue<<endl;
+   
+    
+
+
+    return 0;
+}
+

@@ -1,0 +1,33 @@
+
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+
+int main(int argc, char** argv) {
+	multimap<int, string > lookup;
+//this is an easier way of inserting data into your map.
+	lookup.insert(make_pair(30, "Mike"));
+	lookup.insert(make_pair(10, "James"));
+	lookup.insert(make_pair(20, "tom"));
+	lookup.insert(make_pair(40, "rusty"));
+	lookup.insert(make_pair(50, "erik"));
+
+	for(multimap<int, string>::iterator it = lookup.begin(); it != lookup.end(); it++){
+		cout<< it->first<<": "<<it->second<<endl;
+	}
+
+	cout<<endl;
+//below is how we search through a map to find a specific set of data.
+	auto its = lookup.equal_range(20);
+	for(multimap<int, string>::iterator it =its.first; it != its.second;it++){
+			cout<< it->first<<": "<<it->second<<endl;
+		}
+
+
+
+			return 0;
+
+
+}
